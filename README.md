@@ -1,4 +1,4 @@
-# 🔐 KeyVault Password Manager
+# 🔐 PocketVault Password Manager
 
 A secure, offline-first Progressive Web App (PWA) for managing passwords with versioning and backup capabilities.
 
@@ -16,27 +16,47 @@ A secure, offline-first Progressive Web App (PWA) for managing passwords with ve
 
 ## Installation
 
-### On iPhone (Safari)
+### Setup on GitHub Pages (Required for iPhone)
 
-1. Open `password-manager.html` in Safari
-2. Tap the Share button (square with arrow)
-3. Scroll down and tap "Add to Home Screen"
-4. Name it "KeyVault" and tap "Add"
-5. The app will now appear on your home screen
+**One-time setup:**
 
-### On Desktop
+1. **Create a GitHub repository**
+   - Go to github.com and create a new public repository
+   - Name it something like "pocketvault"
 
-1. Open `password-manager.html` in Chrome/Edge
-2. Click the install icon in the address bar (or ⋮ menu → "Install KeyVault")
-3. Confirm installation
-4. Access from your applications menu or desktop
+2. **Upload files**
+   - Upload `password-manager.html`, `manifest.json`, and `sw.js` to the repo
 
-### On Android
+3. **Enable GitHub Pages**
+   - Go to repo Settings → Pages (in left sidebar)
+   - Under "Source", select "Deploy from a branch"
+   - Select branch: `main` (or `master`), folder: `/ (root)`
+   - Click Save
+   - Wait 1 minute, then you'll see: "Your site is live at `https://yourusername.github.io/repo-name/`"
 
-1. Open `password-manager.html` in Chrome
-2. Tap the menu (⋮)
-3. Tap "Add to Home screen"
-4. Confirm
+4. **Install on iPhone**
+   - Open Safari on your iPhone
+   - Go to: `https://yourusername.github.io/repo-name/password-manager.html`
+   - Tap the Share button (square with arrow)
+   - Scroll down and tap "Add to Home Screen"
+   - Name it "PocketVault" and tap "Add"
+   - **Done!** The app now works 100% offline on your phone
+
+**Important:** All your password data is stored locally on your iPhone. GitHub only hosts the app code - no passwords are ever sent to GitHub.
+
+### Testing on Desktop
+
+- Simply open `password-manager.html` in Chrome/Edge/Firefox on your PC
+- Works immediately without any setup
+- Great for testing changes before uploading to GitHub
+
+### Updating the App
+
+When you make changes:
+1. Edit files on your PC
+2. Upload updated files to GitHub (replace old ones)
+3. On iPhone: Open the app, it will auto-update
+4. Your password data is preserved (stored separately from app code)
 
 ## Usage Guide
 
@@ -126,7 +146,12 @@ You can also add custom deep links for any app.
 
 ### Export/Import
 
-**Export**: Only exports the Primary version as JSON
+**Export**: Only exports the Primary version as JSON with three options:
+- **Download File**: Saves to your Downloads folder
+- **Share** (iOS/mobile): Opens share sheet for email, Files app, AirDrop, etc.
+- **Copy to Clipboard**: Copy JSON text to paste into Notes or other apps
+
+**Export filename format**: `pvault-2025-02-05-143022.json` (YYYY-MM-DD-HHMMSS)
 
 **Import**: Creates a new version (v1, v2, etc.) with timestamp
 
