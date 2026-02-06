@@ -1,8 +1,8 @@
 {
-  "name": "KeyVault Password Manager",
-  "short_name": "KeyVault",
+  "name": "PocketVault Password Manager",
+  "short_name": "PocketVault",
   "description": "Secure offline password management with versioning",
-  "start_url": "/password-manager.html",
+  "start_url": "./password-manager.html",
   "display": "standalone",
   "background_color": "#0a0e27",
   "theme_color": "#0a0e27",

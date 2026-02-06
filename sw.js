@@ -1,7 +1,7 @@
-const CACHE_NAME = 'keyvault-v1';
+const CACHE_NAME = 'pocketvault-v1';
 const urlsToCache = [
-  '/password-manager.html',
-  '/manifest.json'
+  './password-manager.html',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -18,7 +18,10 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        return fetch(event.request);
+        return fetch(event.request).catch(() => {
+          // If fetch fails, try to return cached version
+          return caches.match('./password-manager.html');
+        });
       })
   );
 });
